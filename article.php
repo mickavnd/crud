@@ -10,6 +10,10 @@ if(!isset($_GET['id'])|| empty($_GET["id"])){
     header("Location:articles.php");
     exit;
     }
+
+
+
+
     //je recupere id
     
     $id= $_GET['id'];
@@ -39,7 +43,7 @@ if(!isset($_GET['id'])|| empty($_GET["id"])){
 
 <a href="articles.php" class="btn btn-primary" role="submit" data-bs-toggle="submit">retour</a>
 
-
+<a href="upload.php?id=<?= $article ["id"]?>">ajou"t une image</a>
 
 
 

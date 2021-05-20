@@ -7,9 +7,11 @@ if(!empty($_POST)){
     if(isset($_POST["email"],$_POST["pass"])
     && !empty ($_POST["email"] &&!empty($_POST["pass"]))){
 
-        //on verfiere que cest une email
-        if (!filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)){
+        //on verfiere que cest une emai
 
+
+        if (!filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)){
+         
          die("ce nest pas un email");
 
     }

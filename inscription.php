@@ -1,5 +1,6 @@
 <?php
 
+session_start(); 
 //on verifie si le formualait a etait envoyer
 
 if(!empty($_POST)){
@@ -12,10 +13,14 @@ if(!empty($_POST)){
      //on protzger les donnée
      $pseudo= strip_tags($_POST["mickaname"]);
 
+    $_SESSION['error'] =[];
+
      if(!filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)){
-         die("ladresse email est incorrect");
+         $_SESSION['error']="ladresse email est incorrect";
      }
 
+        
+      if($_SESSION['error'] === []){
      //on hasher le mot de passe 
 
      $pass=password_hash($_POST["pass"],PASSWORD_BCRYPT);
@@ -47,8 +52,7 @@ if(!empty($_POST)){
     //on va pouvoir "connecter lutilisateur 
     //on demarre un SESSION PHP
 
-    session_start();
-
+    
     //on va stoke dans $_SESSION les information de lutilisateur
 
     $_SESSION["user"]=[
@@ -61,7 +65,7 @@ if(!empty($_POST)){
     //on peut rediriger vers la page
     header("Location: admin.php");
 
-
+}
 
 
 
@@ -74,12 +78,27 @@ if(!empty($_POST)){
 
 include('common/header.php');
 
+// $value = implode("SEPARATOR", $_SESSION);
+
+//  echo $value; 
 
 
+// if(isset($value)){
+
+//      foreach($values as $message){
+      
+//     echo $message;
+//  }
+// }
 
 ?>
 
 <h1>inscription</h1>
+<?php
+
+
+ 
+?>
 
 
 <form method="POST">

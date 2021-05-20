@@ -13,7 +13,7 @@ require_once("model/requete.php");
 
     <article>
         <h1><a href="article.php?id=<?= $articles ["id"]?>"> <?=  $articles ["titre"]?></a></h1>
-        <div><?=  $articles ["content"]?></div>
+        <div> <?=  $articles ["content"] ?> </div>
         <p><?=  $articles ["auteur"]?></p>
     </article>
 
