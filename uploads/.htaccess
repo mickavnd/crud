@@ -1,0 +1,7 @@
+RewriteEnigne on
+
+
+Rewriteond %{REQUEST_URI} !\.(png|jpg|jpeg)$
+
+
+RewriteRule .*$ - [F]
